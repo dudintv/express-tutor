@@ -5,6 +5,20 @@
 </head>
 <body>
   <%- include('./partials/navbar') %>
-  <h1 class="text-gray-500">Features</h1>
+  <div class="container mx-auto">
+    <h1 class="text-gray-800 text-2xl my-8">Servers</h1>
+    <div id="app">
+      <div v-if="servers.length === 0">
+        <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-64 w-64"></div>
+      </div>
+      <div v-else>
+        <ul class="list-disc">
+          <li v-for="server of servers">{{ server.name }} <strong>{{ server.status }}</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="/app.js"></script>
 </body>
 </html>

@@ -1,7 +1,6 @@
-import Router from 'express'
+import express from 'express';
+const router = express.Router();
 import { getAll } from '../controllers/servers.js'
-
-const router = Router();
 
 router.get('/api/server', getAll);
 

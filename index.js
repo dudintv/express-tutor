@@ -14,11 +14,19 @@ app.use(logger);
 
 app.get('/', (req, res) => {
   res.render('index', {
-    title: 'My main EJS data title'
+    title: 'My main EJS data title',
+    active: 'index'
   });
 })
 
-// app.use(express.static(path.resolve('static')));
+app.get('/features', (req, res) => {
+  res.render('features', {
+    title: 'My main EJS data title',
+    active: 'features',
+  });
+})
+
+app.use(express.static(path.resolve('static')));
 
 // app.get('/download', (req, res) => {
 //   console.log(req.requestTime);

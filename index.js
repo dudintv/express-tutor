@@ -12,6 +12,10 @@ app.get('/features', (req, res) => {
   res.sendFile(path.resolve('static', 'features.html'));
 })
 
+app.get('/download', (req, res) => {
+  res.download(path.resolve('static', 'index.html'));
+})
+
 app.listen(PORT, () => {
   console.log(`START on ${PORT} port!`);
 });

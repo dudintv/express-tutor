@@ -1,0 +1,25 @@
+<form @submit.prevent="createServer" class="bg-grey-lighter flex flex-col">
+  <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+      <div class="bg-white px-6 py-6 rounded shadow-md text-black w-full">
+          <h1 class="mb-8 text-3xl text-center">Add server</h1>
+          <input 
+              v-model="newServer.name"
+              type="text"
+              class="block border border-grey-light w-full p-3 rounded mb-4"
+              name="server name"
+              placeholder="Server Name" />
+
+          <input 
+              v-model="newServer.status"
+              type="text"
+              class="block border border-grey-light w-full p-3 rounded mb-4"
+              name="status"
+              placeholder="Status" />
+
+          <button
+              type="submit"
+              class="w-full text-center py-3 rounded bg-green-800 text-white hover:bg-green-500 focus:outline-none my-1"
+          >Create</button>
+      </div>
+  </div>
+</form>

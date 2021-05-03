@@ -8,12 +8,13 @@
   <div class="container mx-auto">
     <h1 class="text-gray-800 text-2xl my-8">Servers</h1>
     <div id="app">
+      <%- include('./partials/form') %>
       <div v-if="servers.length === 0">
         <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-64 w-64"></div>
       </div>
       <div v-else>
         <ul class="list-disc">
-          <li v-for="server of servers">{{ server.name }} <strong>{{ server.status }}</strong></li>
+          <li v-for="server of servers" @click="remove(server.id)" :key="server.id" class="cursor-pointer">{{ server.name }} <strong>{{ server.status }}</strong></li>
         </ul>
       </div>
     </div>

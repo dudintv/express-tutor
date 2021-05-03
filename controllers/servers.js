@@ -8,3 +8,17 @@ let servers = [
 export const getAll = (req, res) => {
   res.status(200).json(servers);
 }
+
+export const create = (req, res) => {
+  const newServer = ({
+    id: Date.now().toString(),
+    ...req.body
+  });
+  servers.push(newServer);
+  res.json(newServer);
+}
+
+export const remove = (req, res) => {
+  servers = servers.filter(server => server.id != req.params.id)
+  res.json({id: req.params.id});
+}
